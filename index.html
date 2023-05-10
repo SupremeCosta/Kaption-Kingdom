@@ -16,12 +16,20 @@
     <option value="jokes">Jokes</option>
   </select>
   
-  <button id="generate-button">Generate Quote</button>
+  <button id="generate-button" class="btn btn-primary">Generate Quote</button>
   
-  <div id="quote-container" aria-placeholder="generated quote goes here">
+  <div id="quote-container" class="mt-4" aria-placeholder="generated quote goes here">
+    <div id="quote-actions" class="text-end mb-3">
+      <button id="favorite-button" class="btn btn-outline-secondary">
+        <i class="far fa-heart"></i> Add to Favorites
+      </button>
+    </div>
     <div id="quote-text"></div>
-    
+    <div id="quote-author" class="text-end text-muted mt-2"></div>
     <div id="social-buttons">
+      <button id="copy-button" class="btn btn-primary">
+        <i class="far fa-copy"></i> Copy
+      </button>
       <a id="twitter-button" href="#" target="_blank">
         <img src="twitter-icon.png" alt="Twitter" width="32" height="32">
       </a>
