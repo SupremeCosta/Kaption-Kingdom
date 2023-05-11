@@ -6,7 +6,7 @@ center {
   padding: 0.5rem;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive;
     margin: 0;
     padding: 0;
     background-color: #f1f1f1;
@@ -25,6 +25,7 @@ body {
   
   label {
     display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow',;
     font-weight: bold;
     margin-top: 40px;
     color: #333;
