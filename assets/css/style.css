@@ -1,63 +1,91 @@
 
-center {
-  margin: auto;
-  width: 48%;
-  border: 5px solid black;
-  padding: 0.5rem;
-}
 body {
-    font-family: cursive;
-    margin: 0;
-    padding: 0;
-    background-color: #f1f1f1;
-    flex-direction: column;
-    margin: auto;
-  }
-  
+  font-family: cursive;
+  margin: 0;
+  padding: 0;
+  background-color: #d0e3fd7d;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 48px;
+  color: #173265;
+}
+
+label {
+  display: block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow',;
+  font-weight: bold;
+  margin-top: 40px;
+  color: #173265;
+}
+
+select {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #8ca9f738;
+  box-shadow: 0px 0px 5px #010512 (0, 0, 0, 0.1);
+}
+
+button {
+  display: block;
+  margin: 40px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #6196f7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2b8c85;
+}
+
+#quote-container {
+  margin: 40px auto;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(38, 153, 247, 0.776);
+  padding: 40px;
+}
+
+#quote-text {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+#social-buttons {
+  text-align: center;
+}
+
+#social-buttons a {
+  margin: 0 20px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
   h1 {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 48px;
-    color: #333;
-    padding: 0.5rem;
-    align-items: flex middle;
+    font-size: 36px;
   }
-  
-  label {
-    display: block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow',;
-    font-weight: bold;
-    margin-top: 40px;
-    color: #333;
-    padding: 0.5rem
+
+  select, button, #quote-container {
+    width: 90%;
   }
-  
- button {
-  padding: 0.8rem; 
-  font-size: 20px;
-  background-color: azure;
-  color: black;
-  height: 48px;
-  width: 30%;
-
- }
- #facebook-button {
-  padding:0.5rem;
-  font-size: 20px;
-  color: lightblue;
-  background-color: rgb(49, 49, 218);
-
- }
- #twitter-button {
-padding: 0.5rem;
-font-size: 20px;
-color: black;
-background-color: lightblue;
- }
-
-  #category {
-    padding: 0.6rem;
-    font-size: 25px;
-    color: black;
-    background-color: #333;
-   }
+}
