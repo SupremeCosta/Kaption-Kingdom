@@ -80,13 +80,38 @@ body {
   
   /* Media Queries */
   
-  @media (max-width: 768px) {
+  /* Media Queries for Small Screens */
+@media (max-width: 768px) {
     h1 {
       font-size: 36px;
     }
-  
+    
     select, button, #quote-container {
       width: 90%;
     }
   }
+  
+  /* Media Queries for Medium Screens */
+  
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 42px;
+    }
+    
+    select, button, #quote-container {
+      width: 80%;
+    }
+  }
+  
+  /* Media Queries for Large Screens */
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 48px;
+    }
+    
+    select, button, #quote-container {
+      width: 70%;
+    }
+  }
+  
   
