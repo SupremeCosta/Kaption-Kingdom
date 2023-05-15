@@ -13,8 +13,9 @@ var twitterBtnEl = $('#twitter-button')
 var quoteText = 'I like pizza'
 var authorText = 'Me'
 
+
 // Function for Tweet Button
-function shareTweet () {
+function shareTweet() {
     twitterBtnEl.attr('href', 'https://twitter.com/intent/tweet?text=%22' + quoteText + '%22%20--%20' + authorText)
 }
 

@@ -59,29 +59,21 @@ fetch('https://official-joke-api.appspot.com/random_joke')
 
 
   
-// Fetch an affirmation from the "affirmations.dev" API using client-side code in the browser
-
-
-
-
-
+// Fetch an affirmation from the "affirmations.dev" API using client-side code in the browserd 
 
 
 // trying to find a affirmations alternative dont delete will clean up later//
 
-// fetch('https://www.affirmations.dev')
-//   .then(response => response.text())
-//   .then(data => {
-//     console.log(data);
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
+fetch('https://api.themotivate365.com/stoic-quote')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.quote);
+  })
+  .catch(error => {
+    console.error('Error fetching API:', error);
+  });
 
-// fetch('https://www.affirmations.dev/', { mode: 'no-cors' })
-//   .then(response => response.text())
-//   .then(data => console.log(data))
-//   .catch(error => console.error(error));
+
 
 
   
