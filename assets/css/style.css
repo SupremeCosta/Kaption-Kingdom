@@ -84,6 +84,15 @@ button:hover {
   margin-right: 10px;
 }
 
+#copy-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  text-align: right;
+  margin-right: 180px;
+}
+
 img {
   vertical-align: middle;
 }
