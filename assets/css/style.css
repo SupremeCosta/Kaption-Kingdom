@@ -101,6 +101,10 @@ img {
   vertical-align: middle;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Media Queries */
 /* Extra small devices (phones, up to 600px) */
 @media only screen and (max-width: 600px) {
