@@ -2,6 +2,7 @@
 var quoteEl = $("#quote-text");
 var authorEl = $("#quote-author");
 var twitterBtnEl = $("#twitter-button");
+var whatsAppBtnEl = $('#whatsapp-button');
 var copyBtnEl = $("#copy-button");
 var generateBtnEl = $("#generate-button");
 
@@ -17,8 +18,8 @@ function fetchQuote() {
   fetch("https://api.themotivate365.com/stoic-quote?random=" + Math.random())
     .then((response) => response.json())
     .then((data) => {
-      quoteText = data.quote;
-      authorText = data.author;
+      quoteText = '"' + data.quote + '"';
+      authorText = '-- ' + data.author;
       quoteEl.text(quoteText);
       authorEl.text(authorText);
 
@@ -26,6 +27,15 @@ function fetchQuote() {
       twitterBtnEl.attr(
         "href",
         "https://twitter.com/intent/tweet?text=%22" +
+          quoteText +
+          "%22%20--%20" +
+          authorText
+      );
+
+      // Update WhatsApp Button functionality
+      whatsAppBtnEl.attr(
+        "href",
+        "https://api.whatsapp.com/send?text=%22" +
           quoteText +
           "%22%20--%20" +
           authorText
@@ -47,8 +57,8 @@ $(document).on("click", "#generate-button", function () {
     fetch("https://api.goprogram.ai/inspiration?random=" + Math.random())
       .then((response) => response.json())
       .then((data) => {
-        quoteText = data.quote;
-        authorText = data.author;
+        quoteText = '"' + data.quote + '"';
+        authorText = '-- ' + data.author;
         quoteEl.text(quoteText);
         authorEl.text(authorText);
 
@@ -56,6 +66,15 @@ $(document).on("click", "#generate-button", function () {
         twitterBtnEl.attr(
           "href",
           "https://twitter.com/intent/tweet?text=%22" +
+            quoteText +
+            "%22%20--%20" +
+            authorText
+        );
+
+        // Update WhatsApp Button Functionality
+        whatsAppBtnEl.attr(
+          "href",
+          "https://api.whatsapp.com/send?text=%22" +
             quoteText +
             "%22%20--%20" +
             authorText
@@ -76,7 +95,12 @@ $(document).on("click", "#generate-button", function () {
         // Update Twitter Button functionality
         twitterBtnEl.attr(
           "href",
-          "https://twitter.com/intent/tweet?text=%22" + quoteText + "%22"
+          "https://twitter.com/intent/tweet?text=%22" + quoteText
+        );
+
+        whatsAppBtnEl.attr(
+          "href",
+          "https://api.whatsapp.com/send?text=%22" + quoteText
         );
       })
       .catch((error) => {
@@ -86,8 +110,6 @@ $(document).on("click", "#generate-button", function () {
     console.error("Invalid category selected");
   }
 });
-
-// Facebook Button funcitonality
 
 // Copy Button funcitonality
 copyBtnEl.on("click", function () {
