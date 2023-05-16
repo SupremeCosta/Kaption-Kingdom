@@ -107,7 +107,19 @@ copyBtnEl.on("click", function () {
   document.execCommand("copy");
   tempInput.remove();
 
-  // This alert is a placeholder. We have to change it to a
-  // modal to let the user know the Text was copied to the clipboard.
-  alert("Text copied to clipboard!");
+ // Swap the icons and text
+ $(this).find('.fa-copy').addClass('hidden');
+ $(this).find('.fa-check').removeClass('hidden');
+ $(this).find('#copy-text').text('Copied');
+
+ // disable the button to avoid multiple clicks
+ $(this).prop('disabled', true);
+
+ // revert back to the original state after 3 seconds
+ setTimeout(() => {
+   $(this).find('.fa-copy').removeClass('hidden');
+   $(this).find('.fa-check').addClass('hidden');
+   $(this).find('#copy-text').text('Copy');
+   $(this).prop('disabled', false);
+ }, 3000);
 });
