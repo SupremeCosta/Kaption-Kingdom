@@ -56,7 +56,7 @@ button:hover {
   background-color: #fff;
   box-shadow: 0px 0px 5px rgba(38, 153, 247, 0.776);
   padding: 100px;
-  position: relative; /* add position: relative */
+  position: relative;
 }
 
 #quote-actions {
@@ -68,7 +68,11 @@ button:hover {
 }
 
 #quote-actions button {
-  margin-right: -70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  text-align: right;
 }
 
 #social-buttons {
@@ -98,31 +102,40 @@ img {
 }
 
 /* Media Queries */
-
-/* Media Queries for Small Screens */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 36px;
+/* Extra small devices (phones, up to 600px) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
   }
 
-  select,
-  button,
+  h1 {
+    font-size: 30px;
+  }
+
   #quote-container {
     width: 90%;
+    padding: 50px;
   }
+
+  /* Add more selectors here as necessary... */
 }
 
-/* Media Queries for Medium Screens */
-
-@media (max-width: 992px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  select,
-  button,
-  #quote-container {
-    width: 80%;
-  }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  /* Add any adjustments for these devices here... */
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* Add any adjustments for these devices here... */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /* Add any adjustments for these devices here... */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* Add any adjustments for these devices here... */
+}
