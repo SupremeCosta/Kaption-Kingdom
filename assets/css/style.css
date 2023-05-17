@@ -67,19 +67,12 @@ button:hover {
   text-align: right;
 }
 
-#quote-actions button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  text-align: right;
-}
-
 #social-buttons {
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 0;
+  margin-bottom: 1px;
   text-align: right;
 }
 
@@ -91,9 +84,9 @@ button:hover {
 #copy-button {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   margin: 0;
-  text-align: right;
+  text-align: center;
   margin-right: 180px;
 }
 
