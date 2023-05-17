@@ -2,6 +2,7 @@
 var quoteEl = $("#quote-text");
 var authorEl = $("#quote-author");
 var twitterBtnEl = $("#twitter-button");
+var whatsAppBtnEl = $('#whatsapp-button');
 var copyBtnEl = $("#copy-button");
 var generateBtnEl = $("#generate-button");
 
@@ -17,8 +18,8 @@ function fetchQuote() {
   fetch("https://api.themotivate365.com/stoic-quote?random=" + Math.random())
     .then((response) => response.json())
     .then((data) => {
-      quoteText = data.quote;
-      authorText = data.author;
+      quoteText = '"' + data.quote + '"';
+      authorText = '-- ' + data.author;
       quoteEl.text(quoteText);
       authorEl.text(authorText);
 
@@ -26,6 +27,15 @@ function fetchQuote() {
       twitterBtnEl.attr(
         "href",
         "https://twitter.com/intent/tweet?text=%22" +
+          quoteText +
+          "%22%20--%20" +
+          authorText
+      );
+
+      // Update WhatsApp Button functionality
+      whatsAppBtnEl.attr(
+        "href",
+        "https://api.whatsapp.com/send?text=%22" +
           quoteText +
           "%22%20--%20" +
           authorText
@@ -47,8 +57,8 @@ $(document).on("click", "#generate-button", function () {
     fetch("https://api.goprogram.ai/inspiration?random=" + Math.random())
       .then((response) => response.json())
       .then((data) => {
-        quoteText = data.quote;
-        authorText = data.author;
+        quoteText = '"' + data.quote + '"';
+        authorText = '-- ' + data.author;
         quoteEl.text(quoteText);
         authorEl.text(authorText);
 
@@ -56,6 +66,15 @@ $(document).on("click", "#generate-button", function () {
         twitterBtnEl.attr(
           "href",
           "https://twitter.com/intent/tweet?text=%22" +
+            quoteText +
+            "%22%20--%20" +
+            authorText
+        );
+
+        // Update WhatsApp Button Functionality
+        whatsAppBtnEl.attr(
+          "href",
+          "https://api.whatsapp.com/send?text=%22" +
             quoteText +
             "%22%20--%20" +
             authorText
@@ -76,7 +95,12 @@ $(document).on("click", "#generate-button", function () {
         // Update Twitter Button functionality
         twitterBtnEl.attr(
           "href",
-          "https://twitter.com/intent/tweet?text=%22" + quoteText + "%22"
+          "https://twitter.com/intent/tweet?text=%22" + quoteText
+        );
+
+        whatsAppBtnEl.attr(
+          "href",
+          "https://api.whatsapp.com/send?text=%22" + quoteText
         );
       })
       .catch((error) => {
@@ -86,8 +110,6 @@ $(document).on("click", "#generate-button", function () {
     console.error("Invalid category selected");
   }
 });
-
-// Facebook Button funcitonality
 
 // Copy Button funcitonality
 copyBtnEl.on("click", function () {
@@ -107,19 +129,7 @@ copyBtnEl.on("click", function () {
   document.execCommand("copy");
   tempInput.remove();
 
- // Swap the icons and text
- $(this).find('.fa-copy').addClass('hidden');
- $(this).find('.fa-check').removeClass('hidden');
- $(this).find('#copy-text').text('Copied');
-
- // disable the button to avoid multiple clicks
- $(this).prop('disabled', true);
-
- // revert back to the original state after 3 seconds
- setTimeout(() => {
-   $(this).find('.fa-copy').removeClass('hidden');
-   $(this).find('.fa-check').addClass('hidden');
-   $(this).find('#copy-text').text('Copy');
-   $(this).prop('disabled', false);
- }, 3000);
+  // This alert is a placeholder. We have to change it to a
+  // modal to let the user know the Text was copied to the clipboard.
+  alert("Text copied to clipboard!");
 });
