@@ -12,7 +12,7 @@
 
   <h2 id="description">Description</h2>
   <p>Kaption Kingdom is a simple and user-friendly web application designed for generating inspirational, affirmational, or humorous quotes. Whether you need a motivational boost or a good laugh, Kaption Kingdom has you covered. Select a category, generate a quote, and share it with friends via Twitter or WhatsApp at the click of a button. You can also conveniently copy the quote to your clipboard and share it anywhere you please.</p>
-  <p>GitHub Pages Link</p>
+  <p>https://supremecosta.github.io/Kaption-Kingdom/</p>
 
   <h2 id="usage">Usage</h2>
   <p>Select a category from the drop-down menu. Options include "Inspiration," "Affirmations," and "Jokes." Click the "Generate Quote" button and randomly selected quote from the chosen category will appear on the screen. If you wish to share the quote, click on either the Twitter or WhatsApp icon. This will open a new tab or application where you can share the quote directly. If you want to copy the quote, click on the "Copy" button next to the generated quote.</p>
