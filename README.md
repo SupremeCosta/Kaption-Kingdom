@@ -19,8 +19,9 @@
 
   <h2 id="visuals">Visuals</h2>
   <p>Here are screenshots of the Kaption Kingdom interface:</p>
-  <img src="./assets/images/Kaption Kingdom.png" alt="Kaption Kingdom Screenshot">
-  <img src="./assets/images/Kaption Kingdom.png" alt="WKaption Kingdom Screenshot">
+  <img src="./assets/images/Kaption Kingdom 1.png" alt="Kaption Kingdom Screenshot">
+  <img src="./assets/images/Kaption Kingdom 2.png" alt="Kaption Kingdom Screenshot">
+  <img src="./assets/images/Kaption Kingdom 3.png" alt="Kaption Kingdom Screenshot">
 
   <h2 id="credits">Credits</h2>
   <p>The app uses the following external libraries:</p>
