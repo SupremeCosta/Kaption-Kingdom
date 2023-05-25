@@ -3,6 +3,7 @@
 <head>
   <title>Kaption Kingdom</title>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -43,6 +44,19 @@
     </div>
   </div>
   
+  <!-- Copy Btn Modal -->
+  <div class="modal" id="copy-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <h3 class="title is-4">Text Copied!</h3>
+        <p>The text has been copied to the clipboard.</p>
+        <button class="button is-primary" id="close-modal">OK</button>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal('#copy-modal')"></button>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/api.js"></script>

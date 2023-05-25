@@ -1,8 +1,12 @@
+html {
+  background-color: #dceafd;
+}
+
 body {
   font-family: cursive;
   margin: 0;
   padding: 0;
-  background-color: #d0e3fd7d;
+  background-color: #dceafd;
 }
 
 h1 {
