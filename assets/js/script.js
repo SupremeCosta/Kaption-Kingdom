@@ -175,3 +175,7 @@ copyBtnEl.on("click", function () {
   $("#copy-modal").addClass("is-active");
 });
 
+// Close modal
+$("#close-modal").on("click", function () {
+  $("#copy-modal").removeClass("is-active");
+});
