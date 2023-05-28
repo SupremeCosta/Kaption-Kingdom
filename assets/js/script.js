@@ -153,54 +153,33 @@ $(document).on("click", "#generate-button", function () {
   }
 });
 
-// Copy Button funcitonality
-// copyBtnEl.on("click", function () {
-//   var text = quoteText + " --" + authorText;
 
-  // Create 'input' element with the generated text as its value
-  // var tempInput = $("<input>");
-  // tempInput.val(text);
 
-  // Append the 'input' element to the 'body' element
-  // $("body").append(tempInput);
+$("#close-modal").on("click", function() {
+  // Remove this event listener if not needed anymore
+});
 
-  // Select the 'input' element with the generated text, copy it
-  // with the execCommand method of the document object, and delete
-  // the 'input' element after it is copied to the clipboard
-  // tempInput.select();
-  // document.execCommand("copy");
-  // tempInput.remove();
 
-  // Open modal
-//   $("#copy-modal").addClass("is-active");
-// });
+$(document).ready(function() {
+  let storedName = localStorage.getItem("name");
 
-// Close modal
-// $("#close-modal").on("click", function () {
-//   $("#copy-modal").removeClass("is-active");
-// });
-
-$(document).ready(function () {
-  var storedName = localStorage.getItem("name");
-  if (storedName !== "") {
-    // Name exists in local storage
-    showWelcomeModal(storedName)
-    console.log(storedName)
+  if (storedName) {
+    showWelcomeModal(storedName);
   } else {
-    // Name does not exist in local storage, open modal to ask for name
     showModal("What is your name?");
   }
 });
 
 function showWelcomeModal(storedName) {
-  $("#copy-modal2").find("h4").text("Welcome back " + storedName + '!');
-  $("copy-modal2").addClass("is-active");
+  $("#copy-modal").addClass("is-active");
+  $("#copy-modal").find("h3").text("Welcome back " + storedName + '!');
+  $('#name-input').attr('placeholder', 'If needed change name... ');
 }
-
 
 function showModal(message) {
   $("#copy-modal").addClass("is-active");
   $("#modal-message").text(message);
+  $('#myInput').attr('placeholder', 'Enter your name');
 }
 
 function closeModal() {
@@ -208,26 +187,23 @@ function closeModal() {
 }
 
 function submitName() {
-  var name = $("#name-input").val();
-  if (name.trim() !== "") {
-    // Store the name in local storage
-    localStorage.setItem("name", name);
-    showModal("Welcome back, " + name + "!");
-    closeModal(); // Close the modal
+  var name = $("#name-input").val().trim();
 
+  if (name !== "") {
+    localStorage.setItem("name", name);
+    showWelcomeModal(name);
+    closeModal();
   } else {
     showModal("Please enter your name.");
-
   }
 }
 
-// Close modal
-$("#close-modal").on("click", function () {
+// Event listeners
+$("#close-modal").on("click", function() {
   closeModal();
 });
 
-// Hide modal on outside click
-$(document).on("click", function (event) {
+$(document).on("click", function(event) {
   if ($(event.target).hasClass("is-active")) {
     closeModal();
   }
