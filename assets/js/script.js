@@ -153,7 +153,31 @@ $(document).on("click", "#generate-button", function () {
   }
 });
 
+copyBtnEl.on("click", function() {
+  const text = quoteText + " --" + authorText;
 
+  const tempInput = $("<input>");
+  tempInput.val(text);
+  $("body").append(tempInput);
+
+  tempInput.select();
+  document.execCommand("copy");
+  tempInput.remove();
+
+  // Change copy button appearance
+  copyBtnEl.css("background-color");
+  copyBtnEl.find(".fa-copy").addClass("hidden");
+  copyBtnEl.find("#copy-text").text("Copied");
+  copyBtnEl.find(".fa-check").removeClass("hidden");
+
+  // Reset copy button after 2 seconds
+  setTimeout(function() {
+    copyBtnEl.css("background-color", "#6196f7"); // Revert to default color
+    copyBtnEl.find(".fa-copy").removeClass("hidden");
+    copyBtnEl.find("#copy-text").text("Copy");
+    copyBtnEl.find(".fa-check").addClass("hidden");
+  }, 2000);
+});
 
 $("#close-modal").on("click", function() {
   // Remove this event listener if not needed anymore
