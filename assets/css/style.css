@@ -123,21 +123,33 @@ img {
     padding: 50px;
   }
 
-  /* Add more selectors here as necessary... */
 }
+/* Media Queries */
 /* Extra small devices (phones, up to 600px) */
 @media only screen and (max-width: 600px) {
   body {
     font-size: 14px;
   }
 
+  h1 {
+    font-size: 30px;
+  }
 
+  #quote-container {
+    width: 90%;
+    padding: 50px;
+  }
+
+  select {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+  }
 }
-
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  /* Add any adjustments for these devices here... */
+  
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
