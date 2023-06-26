@@ -108,9 +108,9 @@ $(document).on("click", "#generate-button", function () {
         twitterBtnEl.attr(
           "href",
           "https://twitter.com/intent/tweet?text=" +
-            quoteText +
-            "%20" +
-            authorText
+          quoteText +
+          "%20" +
+          authorText
         );
 
         // Update WhatsApp Button Functionality
@@ -126,7 +126,7 @@ $(document).on("click", "#generate-button", function () {
     // Fetch a random joke
     fetch(
       "https://official-joke-api.appspot.com/random_joke?random=" +
-        Math.random()
+      Math.random()
     )
       .then((response) => response.json())
       .then((data) => {
@@ -153,29 +153,82 @@ $(document).on("click", "#generate-button", function () {
   }
 });
 
-// Copy Button funcitonality
-copyBtnEl.on("click", function () {
-  var text = quoteText + " --" + authorText;
+copyBtnEl.on("click", function() {
+  const text = quoteText + " --" + authorText;
 
-  // Create 'input' element with the generated text as its value
-  var tempInput = $("<input>");
+  const tempInput = $("<input>");
   tempInput.val(text);
-
-  // Append the 'input' element to the 'body' element
   $("body").append(tempInput);
 
-  // Select the 'input' element with the generated text, copy it
-  // with the execCommand method of the document object, and delete
-  // the 'input' element after it is copied to the clipboard
   tempInput.select();
   document.execCommand("copy");
   tempInput.remove();
 
-  // Open modal
-  $("#copy-modal").addClass("is-active");
+  // Change copy button appearance
+  copyBtnEl.css("background-color");
+  copyBtnEl.find(".fa-copy").addClass("hidden");
+  copyBtnEl.find("#copy-text").text("Copied");
+  copyBtnEl.find(".fa-check").removeClass("hidden");
+
+  // Reset copy button after 2 seconds
+  setTimeout(function() {
+    copyBtnEl.css("background-color", "#6196f7"); // Revert to default color
+    copyBtnEl.find(".fa-copy").removeClass("hidden");
+    copyBtnEl.find("#copy-text").text("Copy");
+    copyBtnEl.find(".fa-check").addClass("hidden");
+  }, 2000);
 });
 
-// Close modal
-$("#close-modal").on("click", function () {
+$("#close-modal").on("click", function() {
+  // Remove this event listener if not needed anymore
+});
+
+
+$(document).ready(function() {
+  let storedName = localStorage.getItem("name");
+
+  if (storedName) {
+    showWelcomeModal(storedName);
+  } else {
+    showModal("What is your name?");
+  }
+});
+
+function showWelcomeModal(storedName) {
+  $("#copy-modal").addClass("is-active");
+  $("#copy-modal").find("h3").text("Welcome back " + storedName + '!');
+  $('#name-input').attr('placeholder', 'If needed change name... ');
+}
+
+function showModal(message) {
+  $("#copy-modal").addClass("is-active");
+  $("#modal-message").text(message);
+  $('#myInput').attr('placeholder', 'Enter your name');
+}
+
+function closeModal() {
   $("#copy-modal").removeClass("is-active");
+}
+
+function submitName() {
+  var name = $("#name-input").val().trim();
+
+  if (name !== "") {
+    localStorage.setItem("name", name);
+    showWelcomeModal(name);
+    closeModal();
+  } else {
+    showModal("Please enter your name.");
+  }
+}
+
+// Event listeners
+$("#close-modal").on("click", function() {
+  closeModal();
+});
+
+$(document).on("click", function(event) {
+  if ($(event.target).hasClass("is-active")) {
+    closeModal();
+  }
 });
